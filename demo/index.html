@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Villa — direct-booking website demo by GB Management Thailand</title>
+<meta name="description" content="Demo of a direct-booking website GB Management Thailand builds for villa owners: your photos, your dates, WhatsApp booking, no booking-site commission.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#f6f2ea; --paper:#fffdf8; --ink:#1d2622; --muted:#66716c; --green:#1f5f4f; --line:#e4ddd0; --gold:#e8a33d }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { font:16px/1.6 Manrope, system-ui, sans-serif; background:var(--cream); color:var(--ink) }
+  h1,h2,h3,.logo { font-family:"Tenor Sans", Georgia, serif; font-weight:400 }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 18px }
+  .demo { background:#1d2622; color:#cfe3dc; font-size:12px; text-align:center; padding:6px 10px; letter-spacing:.04em }
+  .demo a { color:#fff }
+  header { position:absolute; left:0; right:0; z-index:4 }
+  header .wrap { height:70px; display:flex; align-items:center; justify-content:space-between; color:#fff }
+  .logo { letter-spacing:.22em; font-size:16px; text-transform:uppercase }
+  .btn { display:inline-block; border-radius:999px; padding:11px 20px; background:var(--green); color:#fff; font-weight:600; font-size:14px; text-decoration:none }
+  .btn.gold { background:var(--gold); color:#2a1d05 }
+  .hero { position:relative; min-height:86vh; display:flex; align-items:flex-end; color:#fff; background:url(img/hero.jpg) 62% center/cover }
+  .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,32,27,.38), rgba(8,32,27,.08) 35%, rgba(8,32,27,.62)) }
+  .hero .wrap { position:relative; z-index:2; padding-bottom:40px; width:100% }
+  .hero h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; max-width:640px }
+  .hero p { margin:12px 0 22px; max-width:520px; opacity:.95 }
+  .search { background:#fff; color:var(--ink); border-radius:20px; padding:14px; display:grid; grid-template-columns:repeat(4,1fr) auto; gap:10px; box-shadow:0 16px 40px rgba(0,0,0,.18) }
+  @media (max-width:760px){ .search { grid-template-columns:1fr 1fr } .search .btn { grid-column:1/-1; text-align:center } }
+  .search label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted) }
+  .search div div { border:1px solid var(--line); border-radius:12px; padding:9px 12px; margin-top:4px; font-size:14px }
+  section { padding:56px 0 }
+  h2 { font-size:clamp(26px,4vw,38px); margin-bottom:6px }
+  .sub { color:var(--muted); margin-bottom:24px }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px }
+  .card { background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden }
+  .card img { width:100%; height:200px; object-fit:cover; display:block }
+  .card div { padding:16px 18px 18px }
+  .card h3 { font-size:20px }
+  .card p { color:var(--muted); font-size:14px; margin:4px 0 14px }
+  .card .row { display:flex; justify-content:space-between; align-items:center; font-size:14px }
+  .why { background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line) }
+  .why .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px }
+  .why b { display:block; font-family:"Tenor Sans", serif; font-weight:400; font-size:19px; margin-bottom:4px }
+  .why p { color:var(--muted); font-size:14px }
+  .faq details { border-bottom:1px solid var(--line); padding:14px 0 }
+  .faq summary { cursor:pointer; font-weight:600 }
+  .faq p { color:var(--muted); margin-top:8px; font-size:15px }
+  .cta { background:var(--green); color:#fff; border-radius:26px; text-align:center; padding:42px 24px; margin:0 18px }
+  .cta h2 { color:#fff } .cta p { opacity:.9; margin:6px 0 20px }
+  footer { padding:30px 0 50px; color:var(--muted); font-size:13px; text-align:center }
+</style>
+</head>
+<body>
+<div class="demo">DEMO — a direct-booking website built by <a href="../">GB Management Thailand</a> · your villa, your photos, your WhatsApp</div>
+<header><div class="wrap"><div class="logo">Your Villa</div><a class="btn" href="https://wa.me/66632287050?text=DEMO" target="_blank" rel="noopener">Book direct</a></div></header>
+
+<section class="hero" style="padding:0"><div class="wrap">
+  <h1>Your villa on Koh Samui, booked directly</h1>
+  <p>Pool, sea view and a host who answers on WhatsApp. Book with the owner — no booking-site commission.</p>
+  <div class="search">
+    <div><label>Check-in</label><div>Select date</div></div>
+    <div><label>Check-out</label><div>Select date</div></div>
+    <div><label>Guests</label><div>2 adults</div></div>
+    <div><label>Bedrooms</label><div>Any</div></div>
+    <a class="btn" href="#villas">Check dates</a>
+  </div>
+</div></section>
+
+<section id="villas"><div class="wrap">
+  <h2>Stay with us</h2>
+  <p class="sub">Your villas and rooms, with your own photos — guests choose dates and book with you.</p>
+  <div class="cards">
+    <div class="card"><img src="img/v1.jpg" alt="Pool villa"><div><h3>Sea View Pool Villa</h3><p>3 bedrooms · private pool · sea view</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
+    <div class="card"><img src="img/v2.jpg" alt="Living room"><div><h3>Garden Villa</h3><p>2 bedrooms · pool · garden</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
+    <div class="card"><img src="img/v3.jpg" alt="Terrace"><div><h3>Beachfront Suite</h3><p>1 bedroom · terrace · beach access</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
+  </div>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+  <h2>Why book direct</h2>
+  <p class="sub">The same stay, straight from the owner.</p>
+  <div class="grid">
+    <div><b>No booking-site commission</b><p>You pay the owner directly — no service fees added on top.</p></div>
+    <div><b>The owner on WhatsApp</b><p>Questions about dates, check-in or the way here are answered right away.</p></div>
+    <div><b>Real photos</b><p>Every photo is of this villa, taken by the owner.</p></div>
+    <div><b>Flexible requests</b><p>Airport transfer, late check-out, extra beds — just ask.</p></div>
+  </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details open><summary>How do I book?</summary><p>Choose your dates and message us on WhatsApp. We confirm availability and send the details.</p></details>
+  <details><summary>Is there a deposit?</summary><p>The owner sets the terms and tells you before you confirm.</p></details>
+  <details><summary>Can we come with children?</summary><p>Ask us on WhatsApp — we'll tell you what fits your family.</p></details>
+</div></section>
+
+<section id="book" style="padding-top:10px"><div class="cta">
+  <h2>Free dates this month</h2>
+  <p>Tell us your dates — we'll reply on WhatsApp with options.</p>
+  <a class="btn gold" href="https://wa.me/66632287050?text=DEMO" target="_blank" rel="noopener">Message us on WhatsApp</a>
+</div></section>
+<footer>Demo website by GB Management Thailand · Koh Samui · Koh Phangan · Phuket · <a href="../privacy.html">Privacy</a></footer>
+</body>
+</html>
