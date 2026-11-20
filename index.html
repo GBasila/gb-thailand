@@ -94,13 +94,25 @@
   footer { padding:40px 0 60px; color:var(--muted); font-size:14px }
   footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
   .float { position:fixed; right:18px; bottom:18px; width:58px; height:58px; border-radius:50%; background:#25d366; display:grid; place-items:center; box-shadow:0 10px 26px rgba(0,0,0,.2); z-index:9 }
+  .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:26px }
+  .plan { background:var(--paper); border:1px solid var(--line); border-radius:22px; padding:22px; display:flex; flex-direction:column }
+  .plan.hot { border:2px solid var(--green); position:relative }
+  .plan.hot::before { content:"Most popular"; position:absolute; top:-12px; left:20px; background:var(--green); color:#fff; font-size:12px; font-weight:600; padding:3px 10px; border-radius:999px }
+  .plan h3 { font-family:"Tenor Sans", serif; font-weight:400; font-size:22px }
+  .plan .for { color:var(--muted); font-size:14px; margin:2px 0 12px }
+  .plan .price { font-size:30px; font-weight:700; color:var(--ink) } .plan .price small { font-size:14px; font-weight:500; color:var(--muted) }
+  .plan .setup { font-size:13px; color:var(--muted); margin-bottom:12px; min-height:18px }
+  .plan ul { list-style:none; padding:0; margin:0 0 18px; font-size:14px } .plan li { padding:5px 0 5px 22px; position:relative } .plan li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:700 }
+  .plan .btn { margin-top:auto; justify-content:center; padding:12px 18px }
+  .plans-note { color:var(--muted); font-size:14px; margin-top:18px }
+  .trial { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px } .trial span { background:#e6f0ec; color:var(--green); border-radius:999px; padding:6px 14px; font-size:14px; font-weight:600 }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GB Management Thailand","legalName":"GB MANAGEMENT (THAILAND) CO., LTD.","taxID":"0835569003781","url":"https://gbasila.github.io/gb-thailand/","telephone":"+66632287050","address":{"@type":"PostalAddress","streetAddress":"63/70 Moo 5, Bo Phut","addressLocality":"Koh Samui","addressRegion":"Surat Thani","addressCountry":"TH"}}</script>
 </head>
 <body>
 <header><div class="wrap">
   <div class="logo">GB Management</div>
-  <nav><a href="#how">How it works</a><a href="#example">Website</a><a href="#who">Who it's for</a><a href="#faq">FAQ</a></nav>
+  <nav><a href="#how">How it works</a><a href="#example">Website</a><a href="#who">Who it's for</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
   <a class="btn btn-green" href="https://wa.me/66632287050?text=DIRECT" target="_blank" rel="noopener">WhatsApp us</a>
 </div></header>
 
@@ -134,7 +146,7 @@
     <h2>A direct-booking website for your villa</h2>
     <p class="lead">This is our demo of a direct-booking website for a villa owner. Yours is built the same way — with your name, your photos, your prices and your WhatsApp.</p>
     <ul class="ticks">
-      <li>Date search and booking buttons on every villa</li>
+      <li>Live calendar synced with Airbnb and Booking.com</li>
       <li>"Why book direct" — no booking-site commission</li>
       <li>FAQ, location and a WhatsApp button on every page</li>
       <li>Looks right on a phone, where most guests book</li>
@@ -174,13 +186,30 @@
   </div>
 </div></section>
 
+<section id="pricing"><div class="wrap">
+  <div class="eyebrow">Pricing</div>
+  <h2>Simple monthly plans, priced by how many properties you have</h2>
+  <div class="trial"><span>1. Your first reel is free</span><span>2. Then a 7-day free trial</span><span>3. Cancel anytime</span></div>
+  <div class="plans">
+    <div class="plan"><h3>Starter</h3><div class="for">1 villa or business</div><div class="price">฿990 <small>/ month</small></div><div class="setup">No setup fee</div>
+      <ul><li>8 reels a month</li><li>Auto-posted to Instagram, Facebook, YouTube</li><li>WhatsApp button on your posts</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Starter%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
+    <div class="plan hot"><h3>Direct</h3><div class="for">1 villa — direct bookings</div><div class="price">฿2,490 <small>/ month</small></div><div class="setup">+ one-time setup ฿4,900</div>
+      <ul><li>Everything in Starter</li><li>Your own direct-booking website</li><li>Calendar synced with Airbnb &amp; Booking.com</li><li>Instant WhatsApp replies, day and night</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Direct%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
+    <div class="plan"><h3>Portfolio</h3><div class="for">Up to 5 or 10 villas</div><div class="price">฿6,900 <small>/ month</small></div><div class="setup">up to 5 villas · ฿11,900 up to 10 · setup ฿9,900</div>
+      <ul><li>20 reels a month (30 for 10 villas)</li><li>One website with all your villas</li><li>Every calendar synced</li><li>WhatsApp replies that know each villa</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Portfolio%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
+    <div class="plan"><h3>Sell</h3><div class="for">A villa for sale</div><div class="price">฿4,900 <small>/ month</small></div><div class="setup">No setup fee</div>
+      <ul><li>16 reels a month in English &amp; Russian</li><li>A sale page for your villa</li><li>Shown on GB Villas Thailand</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Sell%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
+  </div>
+  <p class="plans-note">Managing 11+ villas? Plans from ฿19,900/month — <a href="https://wa.me/66632287050?text=Hi%2C%20we%20manage%20more%20than%2010%20villas">message us</a>. Extra property above your plan: +฿990/month. First 15 clients: no setup fee and your price locked for 12 months. Prices in Thai baht. We are a marketing &amp; automation service — bookings, payments and licences stay between you and your guests. <a href="terms.html">Terms</a></p>
+</div></section>
+
 <section class="faq" id="faq"><div class="wrap">
   <div class="eyebrow">FAQ</div>
   <h2>Questions owners ask</h2>
   <details><summary>Do I have to leave Airbnb or Booking.com?</summary><p>No. Keep your listings. We add a direct channel next to them, so more guests can book with you directly.</p></details>
   <details><summary>What do I need to send?</summary><p>Five to ten good photos of your villa or business, or a link to your current listing. We take it from there.</p></details>
   <details><summary>Is the first reel really free?</summary><p>Yes. Send us your photos on WhatsApp and we make your first reel, so you can see the quality before you decide.</p></details>
-  <details><summary>How much is the subscription?</summary><p>It depends on what you need: reels only, or reels plus website and WhatsApp automation. Message us on WhatsApp and we will send you the plans.</p></details>
+  <details><summary>How much is the subscription?</summary><p>From ฿990 a month for one villa or business. Plans depend on how many properties you have and whether you want your own booking website and WhatsApp automation — see <a href="#pricing">Pricing</a>. Your first reel is free, then a 7-day free trial.</p></details>
   <details><summary>Do you rent out or sell villas yourselves?</summary><p>No. GB Management Thailand is a marketing and automation service. Every booking or sale is made directly between the owner and the guest or buyer. The owner is responsible for the booking, the contract, payments, licences and compliance with Thai law.</p></details>
   <details><summary>Do you use AI?</summary><p>Yes, for speed: drafting scripts, voiceovers and first replies. A real person checks everything before it goes out.</p></details>
 </div></section>
@@ -193,7 +222,7 @@
 
 <footer><div class="wrap">
   <span>© 2026 GB MANAGEMENT (THAILAND) CO., LTD. · Company registration no. 0835569003781<br>Marketing &amp; automation services only — bookings and sales are between the owner and the client; the owner is responsible for them.<br>63/70 Moo 5, Bo Phut Subdistrict, Koh Samui District, Surat Thani Province, Thailand</span>
-  <span><a href="privacy.html">Privacy policy</a> · <a href="https://wa.me/66632287050">+66 63 228 7050</a></span>
+  <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy policy</a> · <a href="https://wa.me/66632287050">+66 63 228 7050</a></span>
 </div></footer>
 
 <a class="float" href="https://wa.me/66632287050?text=DIRECT" target="_blank" rel="noopener" aria-label="WhatsApp">
