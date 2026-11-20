@@ -48,6 +48,31 @@
   .faq details { border-bottom:1px solid var(--line); padding:14px 0 }
   .faq summary { cursor:pointer; font-weight:600 }
   .faq p { color:var(--muted); margin-top:8px; font-size:15px }
+  .cal-wrap { background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:20px; display:grid; grid-template-columns:1fr 300px; gap:24px }
+  @media (max-width:860px){ .cal-wrap { grid-template-columns:1fr } }
+  .cal-nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px }
+  .cal-nav button { border:1px solid var(--line); background:#fff; border-radius:999px; width:36px; height:36px; cursor:pointer; font-size:16px }
+  .cal-months { display:grid; grid-template-columns:1fr 1fr; gap:22px }
+  @media (max-width:620px){ .cal-months { grid-template-columns:1fr } .cal-months .m2 { display:none } }
+  .cal-m h4 { font-family:"Tenor Sans", serif; font-weight:400; font-size:18px; margin-bottom:8px; text-align:center }
+  .cal-g { display:grid; grid-template-columns:repeat(7,1fr); gap:3px; text-align:center }
+  .cal-g .dow { font-size:11px; color:var(--muted); text-transform:uppercase; padding:4px 0 }
+  .cal-g button { border:0; background:#fff; border-radius:10px; padding:9px 0; font:inherit; font-size:14px; cursor:pointer; color:var(--ink) }
+  .cal-g button:hover:not(:disabled) { background:#e6f0ec }
+  .cal-g button:disabled { color:#c4bfb5; text-decoration:line-through; cursor:not-allowed; background:transparent }
+  .cal-g button.past { text-decoration:none }
+  .cal-g button.in { background:#d6e8e1 }
+  .cal-g button.sel { background:var(--green); color:#fff }
+  .cal-side h3 { font-size:22px; margin-bottom:6px }
+  .cal-side .row2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:14px 0 }
+  .cal-side .box { border:1px solid var(--line); border-radius:12px; padding:9px 12px; font-size:14px; background:#fff }
+  .cal-side label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted) }
+  .cal-side select { border:0; font:inherit; background:transparent; width:100% }
+  .cal-side .btn { width:100%; text-align:center; margin-top:6px }
+  .cal-side .btn[aria-disabled=true] { opacity:.45; pointer-events:none }
+  .cal-legend { display:flex; gap:14px; font-size:12px; color:var(--muted); margin-top:12px; flex-wrap:wrap }
+  .cal-legend i { display:inline-block; width:12px; height:12px; border-radius:4px; vertical-align:-1px; margin-right:5px }
+  .cal-note { font-size:12px; color:var(--muted); margin-top:10px }
   .cta { background:var(--green); color:#fff; border-radius:26px; text-align:center; padding:42px 24px; margin:0 18px }
   .cta h2 { color:#fff } .cta p { opacity:.9; margin:6px 0 20px }
   footer { padding:30px 0 50px; color:var(--muted); font-size:13px; text-align:center }
@@ -60,12 +85,26 @@
 <section class="hero" style="padding:0"><div class="wrap">
   <h1>Your villa on Koh Samui, booked directly</h1>
   <p>Pool, sea view and a host who answers on WhatsApp. Book with the owner — no booking-site commission.</p>
-  <div class="search">
-    <div><label>Check-in</label><div>Select date</div></div>
-    <div><label>Check-out</label><div>Select date</div></div>
-    <div><label>Guests</label><div>2 adults</div></div>
-    <div><label>Bedrooms</label><div>Any</div></div>
-    <a class="btn" href="#villas">Check dates</a>
+  <a class="btn gold" href="#dates">Check free dates</a>
+</div></section>
+
+<section id="dates"><div class="wrap">
+  <h2>Free dates</h2>
+  <p class="sub">Live calendar, synced with Airbnb and Booking.com. Pick your dates — we'll confirm on WhatsApp.</p>
+  <div class="cal-wrap">
+    <div>
+      <div class="cal-nav"><button id="calPrev" aria-label="Previous month">‹</button><span id="calUpd" style="font-size:12px;color:var(--muted)"></span><button id="calNext" aria-label="Next month">›</button></div>
+      <div class="cal-months"><div class="cal-m m1"></div><div class="cal-m m2"></div></div>
+      <div class="cal-legend"><span><i style="background:#fff;border:1px solid var(--line)"></i>Free</span><span><s style="color:#c4bfb5;margin-right:5px">12</s>Booked</span><span><i style="background:var(--green)"></i>Your dates</span></div>
+    </div>
+    <div class="cal-side">
+      <h3>Your stay</h3>
+      <div class="row2"><div class="box"><label>Check-in</label><span id="ci">—</span></div><div class="box"><label>Check-out</label><span id="co">—</span></div></div>
+      <div class="box"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6+ guests</option></select></div>
+      <p id="nights" class="cal-note"></p>
+      <a id="askBtn" class="btn gold" aria-disabled="true" target="_blank" rel="noopener" href="#">Ask about these dates on WhatsApp</a>
+      <p class="cal-note">No payment now. The owner confirms availability and the price on WhatsApp.</p>
+    </div>
   </div>
 </div></section>
 
@@ -103,5 +142,62 @@
   <a class="btn gold" href="https://wa.me/66632287050?text=DEMO" target="_blank" rel="noopener">Message us on WhatsApp</a>
 </div></section>
 <footer>Demo website by GB Management Thailand · Koh Samui · Koh Phangan · Phuket · <a href="../privacy.html">Privacy</a></footer>
+<script>
+(() => {
+  const WA = "66632287050";            // demo → our number; on a client's site it is the owner's WhatsApp
+  const iso = (d) => d.toISOString().slice(0, 10);
+  const D = (s) => new Date(s + "T00:00:00Z");
+  const fmt = (s) => D(s).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const today = iso(new Date());
+  let busy = [], ci = null, co = null;
+  let view = new Date(Date.UTC(new Date().getFullYear(), new Date().getMonth(), 1));
+  const nightBusy = (s) => busy.some((b) => s >= b.start && s < b.end);      // a night is busy if start ≤ night < end
+  const rangeFree = (a, b) => { for (let d = D(a); iso(d) < b; d.setUTCDate(d.getUTCDate() + 1)) if (nightBusy(iso(d))) return false; return true; };
+  const month = (el, first) => {
+    const y = first.getUTCFullYear(), m = first.getUTCMonth();
+    const days = new Date(Date.UTC(y, m + 1, 0)).getUTCDate(), lead = (first.getUTCDay() + 6) % 7;
+    let h = `<h4>${first.toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" })}</h4><div class="cal-g">` + ["Mo","Tu","We","Th","Fr","Sa","Su"].map((d) => `<div class="dow">${d}</div>`).join("") + "<div></div>".repeat(lead);
+    for (let i = 1; i <= days; i++) {
+      const s = iso(new Date(Date.UTC(y, m, i)));
+      const past = s < today;
+      // check-out may land on a busy night (guest leaves that morning) once check-in is picked
+      const canCheckout = ci && !co && s > ci && rangeFree(ci, s);
+      const dis = past || (nightBusy(s) && !canCheckout);
+      const cls = [past ? "past" : "", s === ci || s === co ? "sel" : "", ci && co && s > ci && s < co ? "in" : ""].join(" ");
+      h += `<button data-d="${s}" class="${cls}" ${dis ? "disabled" : ""}>${i}</button>`;
+    }
+    el.innerHTML = h + "</div>";
+  };
+  const render = () => {
+    month(document.querySelector(".m1"), view);
+    month(document.querySelector(".m2"), new Date(Date.UTC(view.getUTCFullYear(), view.getUTCMonth() + 1, 1)));
+    document.getElementById("ci").textContent = ci ? fmt(ci) : "—";
+    document.getElementById("co").textContent = co ? fmt(co) : "—";
+    const n = ci && co ? Math.round((D(co) - D(ci)) / 864e5) : 0;
+    document.getElementById("nights").textContent = n ? `${n} night${n > 1 ? "s" : ""}` : ci ? "Now pick your check-out date" : "Pick your check-in date";
+    const btn = document.getElementById("askBtn");
+    if (n) {
+      const g = document.getElementById("guests").value;
+      btn.href = `https://wa.me/${WA}?text=` + encodeURIComponent(`Hi! Are these dates available?\nCheck-in: ${fmt(ci)}\nCheck-out: ${fmt(co)} (${n} nights)\n${g}`);
+      btn.setAttribute("aria-disabled", "false");
+    } else btn.setAttribute("aria-disabled", "true");
+  };
+  document.querySelector(".cal-months").addEventListener("click", (e) => {
+    const s = e.target.dataset?.d; if (!s || e.target.disabled) return;
+    if (!ci || co || s <= ci) { ci = s; co = null; }
+    else if (rangeFree(ci, s)) co = s; else { ci = s; co = null; }
+    render();
+  });
+  document.getElementById("guests").addEventListener("change", render);
+  document.getElementById("calPrev").onclick = () => { const p = new Date(Date.UTC(view.getUTCFullYear(), view.getUTCMonth() - 1, 1)); if (iso(p) >= today.slice(0, 8) + "01") { view = p; render(); } };
+  document.getElementById("calNext").onclick = () => { view = new Date(Date.UTC(view.getUTCFullYear(), view.getUTCMonth() + 1, 1)); render(); };
+  render();
+  fetch("availability.json?" + Date.now()).then((r) => r.json()).then((a) => {
+    busy = a.busy || [];
+    if (a.updated) document.getElementById("calUpd").textContent = "Updated " + new Date(a.updated).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+    render();
+  }).catch(() => {});
+})();
+</script>
 </body>
 </html>
