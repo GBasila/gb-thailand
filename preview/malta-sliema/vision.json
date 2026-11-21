@@ -1,0 +1,277 @@
+{
+ "img/1820903569055771659/03.jpg": {
+  "desc": "Dining area with glass table, ornate silver mirror, magnet-covered fridge",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1262087121136699283/00.jpg": {
+  "desc": "Cozy bedroom with ambient LED lighting, rolled towels, enclosed balcony",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1820903569055771659/01.jpg": {
+  "desc": "Living room with wall-mounted smart TV, leather armchairs, glass table",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1820903569055771659/02.jpg": {
+  "desc": "King bed with grey towels, red calligraphy scrolls, feathered wall decor",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1820903569055771659/04.jpg": {
+  "desc": "Maltese street with colorful wooden balconies and red festa banners",
+  "kind": "exterior",
+  "wow": 7
+ },
+ "img/1820903569055771659/00.jpg": {
+  "desc": "Illuminated harbour at dusk with traditional boats, waterfront restaurants, apartments",
+  "kind": "view",
+  "wow": 8
+ },
+ "img/1292880081713293088/00.jpg": {
+  "desc": "Moody bedroom with dark wood accent wall, LED lighting, sofa, artwork",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1292880081713293088/01.jpg": {
+  "desc": "Bright bedroom with rolled towels, wall TV, clothes rack, balcony door",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1262087121136699283/04.jpg": {
+  "desc": "Compact bathroom with backlit round mirror, vessel sink, glass shower",
+  "kind": "bathroom",
+  "wow": 5
+ },
+ "img/1262087121136699283/02.jpg": {
+  "desc": "Compact studio with bed, black kitchenette, bar table, TV, sunny balcony",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1262087121136699283/03.jpg": {
+  "desc": "Cozy enclosed Maltese balcony with two chairs, plant, limestone street view",
+  "kind": "interior",
+  "wow": 5
+ },
+ "img/1262087121136699283/01.jpg": {
+  "desc": "Rooftop view across Marsamxett Harbour to Valletta's historic fortifications",
+  "kind": "view",
+  "wow": 6
+ },
+ "img/1292880081713293088/03.jpg": {
+  "desc": "Bedroom with LED-lit platform bed, wall TV, bamboo blinds, balcony door",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1292880081713293088/04.jpg": {
+  "desc": "Bedroom with backlit rustic wood plank headboard wall, floating bed",
+  "kind": "bedroom",
+  "wow": 7
+ },
+ "img/1264627375236716010/01.jpg": {
+  "desc": "Modern bedroom with floating lit bed, red propeller wall decor",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1292880081713293088/02.jpg": {
+  "desc": "Cozy bedroom with floating bed, Edison bulb, bamboo blinds, balcony door",
+  "kind": "bedroom",
+  "wow": 5
+ },
+ "img/1264627375236716010/02.jpg": {
+  "desc": "Cozy studio with high dining table, blue window, LED-lit bed",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1264627375236716010/00.jpg": {
+  "desc": "Modern bedroom, glowing LED bed base, red propeller wall art",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1264627375236716010/04.jpg": {
+  "desc": "Modern kitchenette with black range hood, marble backsplash, chain-hung shelves",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1268310164106323530/00.jpg": {
+  "desc": "Cozy bedroom with floating lit bed, pendant bulb, woven wall decor",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1264627375236716010/03.jpg": {
+  "desc": "Night harbor view with illuminated waterfront buildings reflecting on calm bay",
+  "kind": "view",
+  "wow": 8
+ },
+ "img/1268310164106323530/03.jpg": {
+  "desc": "Cozy bedroom with backlit dark headboard, white linens, rolled towels",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1268310164106323530/02.jpg": {
+  "desc": "Boho bedroom with glowing floating bed, woven wall decor, concrete ceiling",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1268310164106323530/01.jpg": {
+  "desc": "Industrial studio with bed, grey sofa, blue portrait art, wall TV",
+  "kind": "interior",
+  "wow": 5
+ },
+ "img/1264668435548627658/02.jpg": {
+  "desc": "Compact bathroom with LED round mirror, vessel sink, glass shower",
+  "kind": "bathroom",
+  "wow": 4
+ },
+ "img/1264668435548627658/04.jpg": {
+  "desc": "Pebble mirror wall art, black acapulco chair with sheepskin, ironing nook",
+  "kind": "interior",
+  "wow": 3
+ },
+ "img/1264668435548627658/01.jpg": {
+  "desc": "Industrial-boho bedroom, OSB headboard, floating bed with warm LED glow",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1264668435548627658/00.jpg": {
+  "desc": "Boho bedroom, OSB headboard, floating bed with LED glow, rattan mirror",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1268310164106323530/04.jpg": {
+  "desc": "Compact modern kitchenette with black marble backsplash, retro fridge, hanging microwave shelf",
+  "kind": "interior",
+  "wow": 3
+ },
+ "img/1264668435548627658/03.jpg": {
+  "desc": "Modern studio with bed, kitchenette, bar stools, and wall TV",
+  "kind": "interior",
+  "wow": 5
+ },
+ "img/1266125370690138119/04.jpg": {
+  "desc": "Boho bedroom with OSB headboard, LED backlighting, jute rugs, rattan decor",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1576890011592721690/00.jpg": {
+  "desc": "Bright living-dining room with glass table, grey sofa, abstract wall art",
+  "kind": "interior",
+  "wow": 5
+ },
+ "img/1266125370690138119/01.jpg": {
+  "desc": "Industrial-style studio bedroom with concrete ceiling, LED-lit bed, jute rugs",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1266125370690138119/03.jpg": {
+  "desc": "Compact kitchenette with black marble backsplash, white cabinets, mini fridge",
+  "kind": "interior",
+  "wow": 2
+ },
+ "img/1266125370690138119/00.jpg": {
+  "desc": "Industrial-boho bedroom with concrete ceiling, glowing platform bed, portrait artwork",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1266125370690138119/02.jpg": {
+  "desc": "Compact dining nook with high bar table, stools, fire safety kit",
+  "kind": "interior",
+  "wow": 3
+ },
+ "img/1576890011592721690/03.jpg": {
+  "desc": "Night harbour with moored boats, illuminated waterfront buildings and reflections",
+  "kind": "view",
+  "wow": 8
+ },
+ "img/1530442606228459675/00.jpg": {
+  "desc": "Dining table with sunflowers, brown chairs, TV, glass cabinet, air conditioning",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1576890011592721690/04.jpg": {
+  "desc": "Compact beige-tiled bathroom with pedestal sink, toilet, mirror, and towel rail",
+  "kind": "bathroom",
+  "wow": 2
+ },
+ "img/1576890011592721690/02.jpg": {
+  "desc": "Bedroom with faux fur throw, wooden headboard, city street painting",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1530442606228459675/01.jpg": {
+  "desc": "Cozy living area with sofa, abstract painting, wooden dining table, sunflowers",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1576890011592721690/01.jpg": {
+  "desc": "Cozy living room with grey sofa, artwork, glass dining table",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1530442606228459675/03.jpg": {
+  "desc": "Double bed with brown towels, wooden headboard, abstract art, lamps",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1530442606228459675/02.jpg": {
+  "desc": "Small balcony with wooden folding bistro table and two chairs",
+  "kind": "terrace",
+  "wow": 3
+ },
+ "img/1530442606228459675/04.jpg": {
+  "desc": "Compact kitchen with mosaic backsplash, sink, kettle, coffee maker, microwave",
+  "kind": "interior",
+  "wow": 3
+ },
+ "img/1039129443361226229/01.jpg": {
+  "desc": "Living room with grey chaise sofa, globe pendant lights, city painting",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1039129443361226229/02.jpg": {
+  "desc": "Bright bedroom with wicker pendant, white wardrobes, fur rug, window",
+  "kind": "bedroom",
+  "wow": 5
+ },
+ "img/1039129443361226229/00.jpg": {
+  "desc": "Modern open-plan kitchen and dining area with white chairs, pendant lights",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1781824967786988837/00.jpg": {
+  "desc": "Modern bedroom with textured wood headboard, grey sofa, striking portrait artwork",
+  "kind": "bedroom",
+  "wow": 5
+ },
+ "img/1039129443361226229/03.jpg": {
+  "desc": "Bright bedroom with king bed, wicker pendant, fur rugs, orange chair",
+  "kind": "bedroom",
+  "wow": 5
+ },
+ "img/1039129443361226229/04.jpg": {
+  "desc": "Rooftop terrace with striped hammock, chairs, surrounded by Maltese-style buildings",
+  "kind": "terrace",
+  "wow": 4
+ },
+ "img/1781824967786988837/03.jpg": {
+  "desc": "Modern bedroom with backlit mosaic wood headboard, floating platform bed",
+  "kind": "bedroom",
+  "wow": 6
+ },
+ "img/1781824967786988837/01.jpg": {
+  "desc": "Grey tufted sofa bed beneath abstract portrait painting, concrete ceiling, plants",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1781824967786988837/02.jpg": {
+  "desc": "Minimalist dining nook with glass table, ghost chairs, wall cube shelves",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1781824967786988837/04.jpg": {
+  "desc": "Modern compact kitchen with induction hob, kettle, coffee machine, city view",
+  "kind": "interior",
+  "wow": 4
+ }
+}
