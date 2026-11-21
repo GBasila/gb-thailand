@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GB Management Thailand — direct bookings for villa & business owners</title>
-<meta name="description" content="Reels, auto-posting, your own direct-booking website and instant WhatsApp replies for villa and business owners on Koh Samui, Koh Phangan and Phuket. One monthly subscription, no middlemen.">
+<meta name="description" content="Reels, auto-posting, your own direct-booking website and instant WhatsApp replies for villa and business owners on Koh Samui, Koh Phangan and Phuket. One price — ฿990/month for any number of properties, no middlemen.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GB Management Thailand">
 <meta property="og:title" content="Direct bookings and buyers for villa &amp; business owners in Thailand">
@@ -104,6 +104,14 @@
   .plan .setup { font-size:13px; color:var(--muted); margin-bottom:12px; min-height:18px }
   .plan ul { list-style:none; padding:0; margin:0 0 18px; font-size:14px } .plan li { padding:5px 0 5px 22px; position:relative } .plan li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:700 }
   .plan .btn { margin-top:auto; justify-content:center; padding:12px 18px }
+  .plans-main { grid-template-columns:1fr }
+  .plan.hot.plan-big::before { content:"One plan for everyone" }
+  .plan-big .cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0 24px }
+  .plan-big .cols ul { margin-bottom:6px }
+  .addons-title { font-family:"Tenor Sans", serif; font-weight:400; font-size:22px; margin:34px 0 0 }
+  .examples { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:22px }
+  .examples div { background:var(--paper); border:1px dashed var(--line); border-radius:16px; padding:14px 16px; display:flex; flex-direction:column; gap:4px; font-size:14px }
+  .examples span { color:var(--green); font-weight:600 }
   .plans-note { color:var(--muted); font-size:14px; margin-top:18px }
   .trial { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px } .trial span { background:#e6f0ec; color:var(--green); border-radius:999px; padding:6px 14px; font-size:14px; font-weight:600 }
 </style>
@@ -188,19 +196,29 @@
 
 <section id="pricing"><div class="wrap">
   <div class="eyebrow">Pricing</div>
-  <h2>Simple monthly plans, priced by how many properties you have</h2>
+  <h2>One price for your whole business — 1 villa or 100</h2>
+  <p class="lead">Booking tools charge per listing. Agencies take a cut of every booking. We charge one flat ฿990 a month and take 0%.</p>
   <div class="trial"><span>1. Your first reel is free</span><span>2. Then a 7-day free trial</span><span>3. Cancel anytime</span></div>
-  <div class="plans">
-    <div class="plan"><h3>Starter</h3><div class="for">1 villa or business</div><div class="price">฿990 <small>/ month</small></div><div class="setup">No setup fee</div>
-      <ul><li>8 reels a month</li><li>Auto-posted to Instagram, Facebook, YouTube</li><li>WhatsApp button on your posts</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Starter%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
-    <div class="plan hot"><h3>Direct</h3><div class="for">1 villa — direct bookings</div><div class="price">฿2,490 <small>/ month</small></div><div class="setup">+ one-time setup ฿4,900</div>
-      <ul><li>Everything in Starter</li><li>Your own direct-booking website</li><li>Calendar synced with Airbnb &amp; Booking.com</li><li>Instant WhatsApp replies, day and night</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Direct%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
-    <div class="plan"><h3>Portfolio</h3><div class="for">Up to 5 or 10 villas</div><div class="price">฿6,900 <small>/ month</small></div><div class="setup">up to 5 villas · ฿11,900 up to 10 · setup ฿9,900</div>
-      <ul><li>20 reels a month (30 for 10 villas)</li><li>One website with all your villas</li><li>Every calendar synced</li><li>WhatsApp replies that know each villa</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Portfolio%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
-    <div class="plan"><h3>Sell</h3><div class="for">A villa for sale</div><div class="price">฿4,900 <small>/ month</small></div><div class="setup">No setup fee</div>
-      <ul><li>16 reels a month in English &amp; Russian</li><li>A sale page for your villa</li><li>Shown on GB Villas Thailand</li></ul><a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20the%20Sell%20plan" target="_blank" rel="noopener">Start with a free reel</a></div>
+  <div class="plans plans-main">
+    <div class="plan hot plan-big"><h3>GB Autopilot</h3><div class="for">Any number of villas, places or services — for rent or for sale</div><div class="price">฿990 <small>/ month</small></div><div class="setup">No setup fee · 0% booking commission</div>
+      <div class="cols">
+        <ul><li>Instant WhatsApp replies to guests, buyers and customers, day and night</li><li>Your own website with all your villas, places or services</li><li>Calendars synced with Airbnb &amp; Booking.com — or WhatsApp booking requests for businesses</li></ul>
+        <ul><li>Auto-replies to comments on Instagram and Facebook</li><li>4 reels a month (one a week) for 1–2 properties you choose</li><li>Posted for you to Instagram, Facebook and YouTube</li></ul>
+      </div>
+      <a class="btn btn-green" href="https://wa.me/66632287050?text=Hi%2C%20I%27m%20interested%20in%20GB%20Autopilot" target="_blank" rel="noopener">Start with a free reel</a></div>
   </div>
-  <p class="plans-note">Managing 11+ villas? Plans from ฿19,900/month — <a href="https://wa.me/66632287050?text=Hi%2C%20we%20manage%20more%20than%2010%20villas">message us</a>. Extra property above your plan: +฿990/month. First 15 clients: no setup fee and your price locked for 12 months. Prices in Thai baht. We are a marketing &amp; automation service — bookings, payments and licences stay between you and your guests. <a href="terms.html">Terms</a></p>
+  <h3 class="addons-title">Want more reels? Make them for any property, any time</h3>
+  <div class="plans">
+    <div class="plan"><h3>1 reel</h3><div class="for">For another villa, a new place or a sale</div><div class="price">฿99</div><div class="setup">per reel</div></div>
+    <div class="plan"><h3>10 reels</h3><div class="for">Use them on any of your properties</div><div class="price">฿790</div><div class="setup">฿79 per reel · valid 90 days</div></div>
+    <div class="plan"><h3>Daily reels</h3><div class="for">A reel every day, on any properties</div><div class="price">฿1,990 <small>/ month</small></div><div class="setup">up to 30 reels a month · about ฿66 per reel</div></div>
+  </div>
+  <div class="examples">
+    <div><b>1 villa</b><span>฿990 / month</span></div>
+    <div><b>5 villas, a reel for each every month</b><span>฿990 + ฿790 = ฿1,780 / month</span></div>
+    <div><b>15 villas, a reel every day</b><span>฿990 + ฿1,990 = ฿2,980 / month</span></div>
+  </div>
+  <p class="plans-note">First 15 clients (“founding clients”): ฿990 locked for 12 months. Included reels don't roll over to the next month. Fair use: up to 50 properties per subscription — larger portfolios, <a href="https://wa.me/66632287050?text=Hi%2C%20we%20have%20more%20than%2050%20properties">message us</a>. Prices in Thai baht. We are a marketing &amp; automation service — bookings, payments and licences stay between you and your guests. <a href="terms.html">Terms</a></p>
 </div></section>
 
 <section class="faq" id="faq"><div class="wrap">
@@ -209,7 +227,7 @@
   <details><summary>Do I have to leave Airbnb or Booking.com?</summary><p>No. Keep your listings. We add a direct channel next to them, so more guests can book with you directly.</p></details>
   <details><summary>What do I need to send?</summary><p>Five to ten good photos of your villa or business, or a link to your current listing. We take it from there.</p></details>
   <details><summary>Is the first reel really free?</summary><p>Yes. Send us your photos on WhatsApp and we make your first reel, so you can see the quality before you decide.</p></details>
-  <details><summary>How much is the subscription?</summary><p>From ฿990 a month for one villa or business. Plans depend on how many properties you have and whether you want your own booking website and WhatsApp automation — see <a href="#pricing">Pricing</a>. Your first reel is free, then a 7-day free trial.</p></details>
+  <details><summary>How much is the subscription?</summary><p>One price for everyone: ฿990 a month, whether you have one villa, ten villas or a restaurant. It includes WhatsApp replies, your website, calendar sync, comment replies and 4 reels a month. Extra reels are ฿99 each, 10 for ฿790, or a reel every day for ฿1,990 a month — see <a href="#pricing">Pricing</a>. Your first reel is free, then a 7-day free trial.</p></details>
   <details><summary>Do you rent out or sell villas yourselves?</summary><p>No. GB Management Thailand is a marketing and automation service. Every booking or sale is made directly between the owner and the guest or buyer. The owner is responsible for the booking, the contract, payments, licences and compliance with Thai law.</p></details>
   <details><summary>Do you use AI?</summary><p>Yes, for speed: drafting scripts, voiceovers and first replies. A real person checks everything before it goes out.</p></details>
 </div></section>
