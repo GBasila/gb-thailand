@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"><script>document.documentElement.classList.add("js")</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +22,6 @@
   .logo { letter-spacing:.22em; font-size:16px; text-transform:uppercase }
   .btn { display:inline-block; border-radius:999px; padding:11px 20px; background:var(--green); color:#fff; font-weight:600; font-size:14px; text-decoration:none }
   .btn.gold { background:var(--gold); color:#2a1d05 }
-  .hero { position:relative; min-height:86vh; display:flex; align-items:flex-end; color:#fff; background:url(img/hero.jpg) 62% center/cover }
-  .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,32,27,.38), rgba(8,32,27,.08) 35%, rgba(8,32,27,.62)) }
-  .hero .wrap { position:relative; z-index:2; padding-bottom:40px; width:100% }
   .hero h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; max-width:640px }
   .hero p { margin:12px 0 22px; max-width:520px; opacity:.95 }
   .search { background:#fff; color:var(--ink); border-radius:20px; padding:14px; display:grid; grid-template-columns:repeat(4,1fr) auto; gap:10px; box-shadow:0 16px 40px rgba(0,0,0,.18) }
@@ -78,17 +75,42 @@
   footer { padding:30px 0 50px; color:var(--muted); font-size:13px; text-align:center }
   .specs { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px } .specs span { font-size:12px; padding:4px 9px; border-radius:999px; background:#eef3f0; color:var(--ink) }
   .est { margin:10px 0 4px; padding:12px 14px; border-radius:14px; background:#eef3f0; display:flex; flex-direction:column; gap:2px } .est b { font-size:24px } .est small { color:var(--muted); font-size:12px } .est span { font-size:13px; color:var(--muted) }
+  .hero { position:relative; height:280vh; padding:0; color:#fff }
+  .hero-pin { position:sticky; top:0; height:100vh; min-height:600px; display:flex; align-items:flex-end; overflow:hidden; isolation:isolate }
+  .hero-media { position:absolute; inset:0; z-index:-2; background:#0b2a23 }
+  .frame { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.08); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform 1.8s cubic-bezier(.2,.7,.2,1) }
+  .frame.on { opacity:1; transform:scale(1) }
+  .hero-pin::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(8,32,27,.62), rgba(8,32,27,.2) 50%, rgba(8,32,27,0) 75%), linear-gradient(180deg, rgba(8,32,27,.4), rgba(8,32,27,.06) 35%, rgba(8,32,27,.7)) }
+  .hero .wrap { position:relative; z-index:2; padding-bottom:56px; width:100% }
+  .hero-tag { position:absolute; right:max(20px, calc((100vw - 1120px) / 2)); bottom:60px; z-index:3; text-align:right; font:600 12px/1.4 ui-monospace, Menlo, monospace; letter-spacing:.16em; text-transform:uppercase }
+  .hero-tag b { display:block; font-size:44px; letter-spacing:0; font-family:inherit; color:#fff } .hero-tag span { opacity:.8 }
+  .hero-progress { position:absolute; left:0; right:0; bottom:0; height:2px; background:rgba(255,255,255,.18) } .hero-progress i { display:block; height:2px; width:0; background:#e8a33d }
+  @media (max-width:1080px){ .hero { height:auto } .hero-pin { position:relative; height:auto; min-height:88svh } .hero-progress { display:none } .hero-tag { bottom:auto; top:90px } .hero-tag b { font-size:30px } }
+  .js .rv { opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1) } .js .rv.in { opacity:1; transform:none }
+  @media (prefers-reduced-motion: reduce){ .frame, .js .rv { transition:none } .js .rv { opacity:1; transform:none } }
 </style>
 </head>
 <body>
 <div class="demo">DEMO — a direct-booking website built by <a href="../">GB Management Thailand</a> · your villa, your photos, your WhatsApp</div>
 <header><div class="wrap"><div class="logo">Your Villa</div><a class="btn" href="https://wa.me/66632287050?text=DEMO" target="_blank" rel="noopener">Book direct</a></div></header>
 
-<section class="hero" style="padding:0"><div class="wrap">
-  <h1>Your villa on Koh Samui, booked directly</h1>
-  <p>Pool, sea view and a host who answers on WhatsApp. Book with the owner — no booking-site commission.</p>
-  <a class="btn gold" href="#dates">Check free dates</a>
-</div></section>
+<section class="hero" id="top">
+  <div class="hero-pin">
+    <div class="hero-media">
+      <img class="frame on" src="img/hero.jpg" alt="Pool villa with sea view" data-t="01|The pool">
+      <img class="frame" src="img/f-living.jpg" alt="Living room open to the pool deck" loading="lazy" data-t="02|Living &amp; pool deck">
+      <img class="frame" src="img/f-bedroom.jpg" alt="Bedroom with sea view" loading="lazy" data-t="03|Bedrooms">
+      <img class="frame" src="img/f-twilight.jpg" alt="Villa at twilight" loading="lazy" data-t="04|Evenings">
+    </div>
+    <div class="hero-tag"><b id="tagN">01</b><span id="tagT">The pool</span></div>
+    <div class="wrap">
+      <h1>Your villa on Koh Samui, booked directly</h1>
+      <p>Pool, sea view and a host who answers on WhatsApp. Book with the owner — no booking-site commission.</p>
+      <a class="btn gold" href="#dates">Check free dates</a>
+    </div>
+    <div class="hero-progress"><i></i></div>
+  </div>
+</section>
 
 <section id="dates"><div class="wrap">
   <h2>Free dates</h2>
@@ -207,6 +229,19 @@
     if (a.updated) document.getElementById("calUpd").textContent = "Updated " + new Date(a.updated).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
     render();
   }).catch(() => {});
+})();
+</script>
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches, hero = document.getElementById('top');
+  var fr = [].slice.call(hero.querySelectorAll('.frame')), bar = hero.querySelector('.hero-progress i'), cur = 0;
+  function set(i){ if (i === cur) return; cur = i; fr.forEach(function(f,k){ f.classList.toggle('on', k === i) }); var t = fr[i].dataset.t.split('|'); document.getElementById('tagN').textContent = t[0]; document.getElementById('tagT').innerHTML = t[1] }
+  var big = function(){ return innerWidth > 1080 }, tick = false;
+  addEventListener('scroll', function(){ if (tick) return; tick = true; requestAnimationFrame(function(){ tick = false; if (!big() || reduced) return;
+    var r = hero.getBoundingClientRect(), span = hero.offsetHeight - innerHeight, p = Math.min(1, Math.max(0, -r.top / span)); set(Math.min(fr.length - 1, Math.floor(p * fr.length))); bar.style.width = (p * 100).toFixed(2) + '%' }) }, { passive: true });
+  if (!reduced) setInterval(function(){ if (!big()) set((cur + 1) % fr.length) }, 4000);
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }) }, { threshold: .12 });
+  document.querySelectorAll('section:not(.hero) h2, .card, .cal-wrap, .why .wrap > *, .faq details, .cta').forEach(function(el, i){ el.classList.add('rv'); el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el) });
 })();
 </script>
 </body>
