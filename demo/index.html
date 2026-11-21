@@ -76,6 +76,8 @@
   .cta { background:var(--green); color:#fff; border-radius:26px; text-align:center; padding:42px 24px; margin:0 18px }
   .cta h2 { color:#fff } .cta p { opacity:.9; margin:6px 0 20px }
   footer { padding:30px 0 50px; color:var(--muted); font-size:13px; text-align:center }
+  .specs { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px } .specs span { font-size:12px; padding:4px 9px; border-radius:999px; background:#eef3f0; color:var(--ink) }
+  .est { margin:10px 0 4px; padding:12px 14px; border-radius:14px; background:#eef3f0; display:flex; flex-direction:column; gap:2px } .est b { font-size:24px } .est small { color:var(--muted); font-size:12px } .est span { font-size:13px; color:var(--muted) }
 </style>
 </head>
 <body>
@@ -100,8 +102,10 @@
     <div class="cal-side">
       <h3>Your stay</h3>
       <div class="row2"><div class="box"><label>Check-in</label><span id="ci">—</span></div><div class="box"><label>Check-out</label><span id="co">—</span></div></div>
+      <div class="box" style="margin-bottom:10px"><label>Villa</label><select id="villa"><option value="0" data-price="6500">Sea View Pool Villa — from ฿6,500/night</option><option value="1" data-price="4200">Garden Villa — from ฿4,200/night</option><option value="2" data-price="3500">Beachfront Suite — from ฿3,500/night</option></select></div>
       <div class="box"><label>Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6+ guests</option></select></div>
       <p id="nights" class="cal-note"></p>
+      <div id="est" class="est" hidden><span id="estL"></span><b id="estT"></b><small>Estimate (demo prices). The owner confirms the final price on WhatsApp.</small></div>
       <a id="askBtn" class="btn gold" aria-disabled="true" target="_blank" rel="noopener" href="#">Ask about these dates on WhatsApp</a>
       <p class="cal-note">No payment now. The owner confirms availability and the price on WhatsApp.</p>
     </div>
@@ -112,9 +116,9 @@
   <h2>Stay with us</h2>
   <p class="sub">Your villas and rooms, with your own photos — guests choose dates and book with you.</p>
   <div class="cards">
-    <div class="card"><img src="img/v1.jpg" alt="Pool villa"><div><h3>Sea View Pool Villa</h3><p>3 bedrooms · private pool · sea view</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
-    <div class="card"><img src="img/v2.jpg" alt="Living room"><div><h3>Garden Villa</h3><p>2 bedrooms · pool · garden</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
-    <div class="card"><img src="img/v3.jpg" alt="Terrace"><div><h3>Beachfront Suite</h3><p>1 bedroom · terrace · beach access</p><div class="row"><span>Your price / night</span><a class="btn" href="https://wa.me/66632287050?text=DEMO">Book</a></div></div></div>
+    <div class="card"><img src="img/v1.jpg" alt="Pool villa"><div><h3>Sea View Pool Villa</h3><div class="specs"><span>3 bedrooms</span><span>up to 6 guests</span><span>private pool · sea view</span></div><div class="row"><span>from <b>฿6,500</b> / night</span><a class="btn pick" href="#dates" data-villa="0">Check dates</a></div></div></div>
+    <div class="card"><img src="img/v2.jpg" alt="Living room"><div><h3>Garden Villa</h3><div class="specs"><span>2 bedrooms</span><span>up to 4 guests</span><span>pool · garden</span></div><div class="row"><span>from <b>฿4,200</b> / night</span><a class="btn pick" href="#dates" data-villa="1">Check dates</a></div></div></div>
+    <div class="card"><img src="img/v3.jpg" alt="Terrace"><div><h3>Beachfront Suite</h3><div class="specs"><span>1 bedroom</span><span>up to 2 guests</span><span>terrace · beach access</span></div><div class="row"><span>from <b>฿3,500</b> / night</span><a class="btn pick" href="#dates" data-villa="2">Check dates</a></div></div></div>
   </div>
 </div></section>
 
@@ -178,10 +182,16 @@
     const btn = document.getElementById("askBtn");
     if (n) {
       const g = document.getElementById("guests").value;
-      btn.href = `https://wa.me/${WA}?text=` + encodeURIComponent(`Hi! Are these dates available?\nCheck-in: ${fmt(ci)}\nCheck-out: ${fmt(co)} (${n} nights)\n${g}`);
+      const vs = document.getElementById("villa"), vo = vs.options[vs.selectedIndex], price = +vo.dataset.price, vname = vo.text.split(" — ")[0];
+      const est = document.getElementById("est"); est.hidden = false;
+      document.getElementById("estL").textContent = `${vname} · ${n} night${n > 1 ? "s" : ""} × ฿${price.toLocaleString("en-US")}`;
+      document.getElementById("estT").textContent = `≈ ฿${(price * n).toLocaleString("en-US")}`;
+      btn.href = `https://wa.me/${WA}?text=` + encodeURIComponent(`Hi! Are these dates available?\nVilla: ${vname}\nCheck-in: ${fmt(ci)}\nCheck-out: ${fmt(co)} (${n} nights)\n${g}\nEstimate on the site: ฿${(price * n).toLocaleString("en-US")}`);
       btn.setAttribute("aria-disabled", "false");
-    } else btn.setAttribute("aria-disabled", "true");
+    } else { btn.setAttribute("aria-disabled", "true"); document.getElementById("est").hidden = true; }
   };
+  document.getElementById("villa").addEventListener("change", () => render());
+  document.querySelectorAll(".pick").forEach((a) => a.addEventListener("click", () => { document.getElementById("villa").value = a.dataset.villa; render(); }));
   document.querySelector(".cal-months").addEventListener("click", (e) => {
     const s = e.target.dataset?.d; if (!s || e.target.disabled) return;
     if (!ci || co || s <= ci) { ci = s; co = null; }
