@@ -13,6 +13,10 @@
 <meta property="og:image" content="https://gbmanagementthailand.com/assets/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://gbmanagementthailand.com/">
+<link rel="alternate" hreflang="ru" href="https://gbmanagementthailand.com/ru/">
+<link rel="alternate" hreflang="th" href="https://gbmanagementthailand.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://gbmanagementthailand.com/">
 <link rel="canonical" href="https://gbmanagementthailand.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -198,6 +202,10 @@
   .js .rv.in { opacity:1; transform:none }
   .eyebrow { font-family:"JetBrains Mono", monospace; font-weight:600; letter-spacing:.16em }
   @media (prefers-reduced-motion: reduce){ .frame, .sframe, .js .rv { transition:none } .js .rv { opacity:1; transform:none } }
+  .lang { display:flex; gap:2px; align-items:center; font:600 12px/1 "JetBrains Mono", monospace; letter-spacing:.06em; margin:0 12px }
+  .lang a { text-decoration:none; padding:6px 7px; border-radius:6px; opacity:.75; color:inherit } .lang a.cur { opacity:1; background:rgba(255,255,255,.18) } .lang a:hover { opacity:1 }
+  @media (max-width:440px){ .logo { font-size:12px; letter-spacing:.08em } header .btn { padding:9px 12px; font-size:13px } .lang { gap:0 } .lang a { padding:5px 4px } }
+  @media (max-width:820px){ .lang { margin:0 8px 0 auto } .lang a { padding:6px 5px } }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GB Management Thailand","legalName":"GB MANAGEMENT (THAILAND) CO., LTD.","taxID":"0835569003781","url":"https://gbmanagementthailand.com/","telephone":"+66632287050","address":{"@type":"PostalAddress","streetAddress":"63/70 Moo 5, Bo Phut","addressLocality":"Koh Samui","addressRegion":"Surat Thani","addressCountry":"TH"}}</script>
 </head>
@@ -205,6 +213,7 @@
 <header><div class="wrap">
   <div class="logo">GB Management</div>
   <nav><a href="#how">How it works</a><a href="#example">Website</a><a href="#who">Who it's for</a><a href="#pricing">Pricing</a><a href="#verify">Company</a><a href="#faq">FAQ</a></nav>
+  <div class="lang" aria-label="Language"><a href="/" hreflang="en" class="cur" aria-current="page">EN</a><a href="/ru/" hreflang="ru">RU</a><a href="/th/" hreflang="th">TH</a></div>
   <a class="btn btn-green" href="https://wa.me/66632287050?text=DIRECT" target="_blank" rel="noopener">WhatsApp us</a>
 </div></header>
 
