@@ -71,6 +71,7 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px;text-align:center}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--deep);color:#fff;padding:14px 18px;border-radius:16px;max-width:92vw;z-index:60;transition:transform .4s;font-size:14px}.toast.on{transform:translateX(-50%) translateY(0)}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}.js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.hero .fr{transition:opacity .3s}.js .rv{opacity:1;transform:none}}
+.av{font-size:13px;margin:8px 0 2px;color:var(--muted)}.av.free{color:#1d7a46;font-weight:600}.av.busy{color:#b4332a;font-weight:600}
 </style></head><body>
 <div class="demo">PRIVATE PREVIEW for the owner · not public · by GB Management · photos &amp; details from your Airbnb listings · name, colours and texts can be changed</div>
 <header id="hd"><div class="wrap"><div class="logo">Sunset House Bophut<small>Bo Phut, Thailand</small></div><nav><a href="#stays">Stays</a><a href="#why">Book direct</a><a href="#faq">FAQ</a><a class="btn" href="#stays">Check dates</a></nav></div></header>
@@ -106,10 +107,11 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px;text-align:center}
 <div class="modal" id="m"><div class="box"><button class="x" id="mx" aria-label="Close">×</button><img class="big" id="mbig" alt=""><div class="thumbs" id="mth"></div>
 <div class="mb"><div><div class="meta" id="mmeta"></div><h3 id="mt"></h3><ul class="specs" id="msp" style="margin-top:10px"></ul><p class="note">Photos from the owner's listing.</p></div>
 <div class="form"><b>Request dates</b><label>Check-in</label><input type="date" id="ci"><label>Check-out</label><input type="date" id="co"><label>Guests</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-<button class="btn" id="send">Send request on WhatsApp</button><p class="note">On the live site this opens a WhatsApp chat with the host, with the stay and dates filled in.</p></div></div></div></div>
+<p id="av" class="av"></p><button class="btn" id="send">Send request on WhatsApp</button><p class="note">Opens a WhatsApp chat with the host, with the stay and dates filled in.</p></div></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
-const L=[{"t":"the sunset house .(bigbudda )","type":"Tiny home","r":"4.67","s":["1 bedroom","2 beds","1 bath"],"p":["img/1399065114622951948/00.jpg","img/1399065114622951948/01.jpg","img/1399065114622951948/02.jpg","img/1399065114622951948/03.jpg","img/1399065114622951948/04.jpg","img/1399065114622951948/05.jpg","img/1399065114622951948/06.jpg"]}];
+const WA="66992225699";
+const L=[{"id":"1399065114622951948","t":"the sunset house .(bigbudda )","type":"Tiny home","r":"4.67","s":["1 bedroom","2 beds","1 bath"],"p":["img/1399065114622951948/00.jpg","img/1399065114622951948/01.jpg","img/1399065114622951948/02.jpg","img/1399065114622951948/03.jpg","img/1399065114622951948/04.jpg","img/1399065114622951948/05.jpg","img/1399065114622951948/06.jpg"]}];
 const fr=[...document.querySelectorAll(".hero .fr")],tags=["White A-frame cottage with thatched awning, patio chairs, AC units"];let k=0;
 if(fr.length>1&&!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{fr[k].classList.remove("on");k=(k+1)%fr.length;fr[k].classList.add("on");document.getElementById("tag").textContent=tags[k]},5500);
 const hd=document.getElementById("hd"),dm=document.querySelector(".demo");const hdr=()=>{const s=scrollY>60;hd.classList.toggle("solid",s);hd.style.top=s?"0px":Math.max(0,dm.offsetHeight-scrollY)+"px"};addEventListener("scroll",hdr,{passive:true});addEventListener("resize",hdr);hdr();
@@ -119,10 +121,19 @@ const m=document.getElementById("m"),big=document.getElementById("mbig"),th=docu
 function open(i,book){cur=L[i];big.src=cur.p[0];th.innerHTML=cur.p.map((p,j)=>'<img src="'+p+'"'+(j?'':' class="on"')+' alt="">').join("");
 th.querySelectorAll("img").forEach(t=>t.onclick=()=>{big.src=t.src;th.querySelectorAll("img").forEach(x=>x.classList.toggle("on",x===t))});
 document.getElementById("mt").textContent=cur.t;document.getElementById("mmeta").innerHTML="<span>"+cur.type+"</span>"+(+cur.r?'<span class="star">★ '+cur.r+"</span>":'<span class="new">New</span>');
-document.getElementById("msp").innerHTML=cur.s.map(s=>"<li>"+s+"</li>").join("");m.classList.add("open");document.body.style.overflow="hidden";if(book)setTimeout(()=>document.getElementById("ci").focus(),200)}
+document.getElementById("msp").innerHTML=cur.s.map(s=>"<li>"+s+"</li>").join("");m.classList.add("open");document.body.style.overflow="hidden";if(book)setTimeout(()=>document.getElementById("ci").focus(),200);chk()}
 document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>open(+b.dataset.i,b.classList.contains("book")));
 const close=()=>{m.classList.remove("open");document.body.style.overflow=""};document.getElementById("mx").onclick=close;m.onclick=e=>{if(e.target===m)close()};addEventListener("keydown",e=>{if(e.key==="Escape")close()});
 const t=new Date(),iso=d=>d.toISOString().slice(0,10);ci.min=iso(t);co.min=iso(new Date(+t+864e5));
+// live availability from the owner's Airbnb/Booking calendars (availability.json, synced every ~45 min)
+let AV=null;fetch("availability.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{AV=j;chk()}).catch(()=>{});
+const av=document.getElementById("av");
+function chk(){if(!av)return;av.className="av";av.textContent="";if(!AV||!cur||!AV.listings||!AV.listings[cur.id])return;
+ if(!ci.value||!co.value||co.value<=ci.value){av.textContent="📅 Calendar synced with Airbnb — pick your dates";return}
+ const hit=AV.listings[cur.id].find(b=>b.start<co.value&&ci.value<b.end);
+ if(hit){av.classList.add("busy");av.textContent="❌ Booked "+hit.start+" → "+hit.end+" — try other dates"}else{av.classList.add("free");av.textContent="✅ Available for your dates"}}
+ci.onchange=co.onchange=chk;
 document.getElementById("send").onclick=()=>{const msg="Hi! I'd like to book: "+cur.t+(ci.value?"\nCheck-in: "+ci.value:"")+(co.value?"\nCheck-out: "+co.value:"")+"\nGuests: "+gu.value;
+if(WA){const a=document.createElement("a");a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove();return} // (page has its own open(), so no window.open)
 const el=document.getElementById("toast");el.textContent="Preview: on your live site this sends to your WhatsApp → “"+msg.replace(/\n/g," · ")+"”";el.classList.add("on");setTimeout(()=>el.classList.remove("on"),6000)};
 </script></body></html>
