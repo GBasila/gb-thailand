@@ -273,5 +273,30 @@
   "desc": "Modern compact kitchen with induction hob, kettle, coffee machine, city view",
   "kind": "interior",
   "wow": 4
+ },
+ "img/1818962463836576717/00.jpg": {
+  "desc": "Balcony view over sunny limestone town rooftops and narrow street",
+  "kind": "view",
+  "wow": 5
+ },
+ "img/1818962463836576717/02.jpg": {
+  "desc": "Living room with white shelving, TV, brass nesting tables, wood doors",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1818962463836576717/04.jpg": {
+  "desc": "White double bed, rolled towels, colorful abstract painting, pink lava lamp",
+  "kind": "bedroom",
+  "wow": 4
+ },
+ "img/1818962463836576717/03.jpg": {
+  "desc": "Bright open-plan living room with glass dining table and grey sofa",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1818962463836576717/01.jpg": {
+  "desc": "Modern bedroom, white bed, rolled towels, framed art, glowing bedside lamps",
+  "kind": "bedroom",
+  "wow": 5
  }
 }
