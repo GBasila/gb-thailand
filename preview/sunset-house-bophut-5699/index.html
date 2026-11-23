@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset House Bophut · Bo Phut, Thailand — website preview</title>
+<meta name="description" content="Private preview of a direct-booking website for 1 stays in Bo Phut, Thailand.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root{--sea:#0f3b4c;--deep:#0a2733;--sand:#f5efe6;--paper:#fffdf9;--ink:#13232b;--muted:#5f6f76;--line:#e6ddcf;--gold:#d9a35a}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font:16px/1.6 Manrope,system-ui,sans-serif;background:var(--sand);color:var(--ink)}
+h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.demo{background:var(--deep);color:#bfd6dd;font-size:12px;text-align:center;padding:7px 10px;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}body{overflow-x:hidden}
+header{position:fixed;top:30px;left:0;right:0;z-index:20;transition:background .4s,top .4s}
+header.solid{top:0;background:rgba(10,39,51,.92);backdrop-filter:blur(10px)}
+header .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;color:#fff;gap:12px}
+.logo{font-size:24px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(max-width:620px){.logo{font-size:21px}.logo small{display:none}}.logo small{font-family:Manrope;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-left:8px}
+nav a{color:#fff;text-decoration:none;font-size:14px;margin-left:22px;opacity:.9}@media(max-width:820px){nav a:not(.btn){display:none}}
+.btn{display:inline-block;border:0;cursor:pointer;border-radius:999px;padding:11px 20px;background:var(--gold);color:#22180a;font:600 14px Manrope,sans-serif;text-decoration:none;white-space:nowrap}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;color:#fff}
+.hero .fr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.8s cubic-bezier(.2,.7,.2,1),transform 9s linear}
+.hero .fr.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,24,32,.45),rgba(6,24,32,.05) 40%,rgba(6,24,32,.75))}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:56px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:clamp(40px,7vw,84px);line-height:1;margin:10px 0 14px;max-width:820px}
+.hero p{max-width:540px;font-size:17px;opacity:.95}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center}
+.hero .tag{position:absolute;right:18px;bottom:60px;z-index:3;font-size:13px;opacity:.85;text-align:right;max-width:240px}@media(max-width:760px){.hero .tag{display:none}}
+.facts{background:var(--paper);border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.facts div{padding:22px 8px}.facts b{display:block;font:600 34px "Cormorant Garamond",serif}.facts span{font-size:13px;color:var(--muted)}
+@media(max-width:640px){.facts .wrap{grid-template-columns:1fr 1fr}}
+section{padding:70px 0}h2{font-size:clamp(32px,4.4vw,50px);line-height:1.05;margin-bottom:8px}.sub{color:var(--muted);margin-bottom:26px;max-width:640px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 16px;font:500 14px Manrope;cursor:pointer;color:var(--ink)}
+.filters button.on{background:var(--sea);color:#fff;border-color:var(--sea)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,59,76,.12)}
+.card.hide{display:none}
+.ph{position:relative;border:0;padding:0;cursor:pointer;display:block;overflow:hidden;background:#ddd}
+.ph img{width:100%;height:230px;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}.card:hover .ph img{transform:scale(1.05)}
+.cnt{position:absolute;right:12px;bottom:12px;background:rgba(10,39,51,.75);color:#fff;font-size:12px;border-radius:999px;padding:4px 10px}
+.cb{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}.star{color:var(--ink);font-weight:600}.new{color:#1d7a5a;font-weight:600}
+.card h3{font-size:25px;line-height:1.1;margin:6px 0 10px}
+.specs{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.specs li{background:var(--sand);border-radius:999px;padding:4px 11px;font-size:13px}
+.acts{margin-top:auto;display:flex;gap:8px}.acts .btn{flex:1;text-align:center}
+.why{background:var(--deep);color:#e6f0f2}.why .sub{color:#9fb8bf}
+.why .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;margin-top:10px}
+.why b{display:block;font:600 24px "Cormorant Garamond",serif;color:#fff;margin-bottom:4px}.why p{color:#a9c0c6;font-size:15px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}.faq summary{cursor:pointer;font-weight:600}.faq p{color:var(--muted);margin-top:8px}
+.cta{background:var(--sea);color:#fff;border-radius:28px;text-align:center;padding:52px 24px;margin:0 18px}.cta h2{color:#fff}.cta p{opacity:.9;margin:6px auto 22px;max-width:520px}
+footer{padding:34px 0 60px;color:var(--muted);font-size:13px;text-align:center}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(6,20,26,.86);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}.box{background:var(--paper);border-radius:24px;max-width:980px;width:100%;max-height:92vh;overflow:auto;position:relative}
+.x{position:absolute;right:12px;top:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:20px;cursor:pointer}
+.big{width:100%;height:min(58vh,560px);object-fit:cover;display:block;border-radius:24px 24px 0 0}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 16px}.thumbs img{width:86px;height:62px;object-fit:cover;border-radius:10px;cursor:pointer;opacity:.6;flex:none}.thumbs img.on{opacity:1;outline:2px solid var(--gold)}
+.mb{padding:6px 22px 24px;display:grid;grid-template-columns:1fr 320px;gap:22px}@media(max-width:760px){.mb{grid-template-columns:1fr}}
+.mb h3{font-size:30px;line-height:1.1}.form{background:var(--sand);border-radius:18px;padding:16px}
+.form label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.form input,.form select{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit;background:#fff;margin-top:3px}
+.form .btn{width:100%;margin-top:14px;text-align:center}.note{font-size:12px;color:var(--muted);margin-top:10px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--deep);color:#fff;padding:14px 18px;border-radius:16px;max-width:92vw;z-index:60;transition:transform .4s;font-size:14px}.toast.on{transform:translateX(-50%) translateY(0)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.hero .fr{transition:opacity .3s}.js .rv{opacity:1;transform:none}}
+</style></head><body>
+<div class="demo">PRIVATE PREVIEW for the owner · not public · by GB Management · photos &amp; details from your Airbnb listings · name, colours and texts can be changed</div>
+<header id="hd"><div class="wrap"><div class="logo">Sunset House Bophut<small>Bo Phut, Thailand</small></div><nav><a href="#stays">Stays</a><a href="#why">Book direct</a><a href="#faq">FAQ</a><a class="btn" href="#stays">Check dates</a></nav></div></header>
+<section class="hero" style="padding:0">
+<img class="fr on" src="img/1399065114622951948/02.jpg" alt="White A-frame cottage with thatched awning, patio chairs, AC units">
+<div class="wrap"><div class="eyebrow">1 stays · Bo Phut, Thailand</div>
+<h1>Stays in Bo Phut, booked direct</h1>
+<p>Lofts, apartments and a sea-view villa — message the host, get your dates and the best direct rate.</p>
+<div class="row"><a class="btn" href="#stays">See all 1 stays</a><span>★ 4.67 average guest rating</span></div></div>
+<div class="tag" id="tag">White A-frame cottage with thatched awning, patio chairs, AC units</div>
+</section>
+<div class="facts"><div class="wrap"><div><b>1</b><span>stays</span></div><div><b>0</b><span>lofts</span></div><div><b>1</b><span>apartments &amp; villa</span></div><div><b>★ 4.67</b><span>guest rating</span></div></div></div>
+<section id="stays"><div class="wrap">
+<h2 class="rv">Choose your stay</h2><p class="sub rv">Every place below comes straight from the owner — no booking-site fees on top.</p>
+<div class="filters"><button class="on" data-f="all">All 1</button><button data-f="b2">2+ bedrooms</button><button data-f="villa">Villa</button></div>
+<div class="cards"><article class="card rv" data-c="villa" data-b="1">
+  <button class="ph" data-i="0" aria-label="Photos of the sunset house .(bigbudda )"><img src="img/1399065114622951948/01.jpg" alt="the sunset house .(bigbudda )" loading="lazy"><span class="cnt">7 photos</span></button>
+  <div class="cb"><div class="meta"><span>Tiny home</span><span class="star">★ 4.67</span></div>
+  <h3>the sunset house .(bigbudda )</h3>
+  <ul class="specs"><li>1 bedroom</li><li>2 beds</li><li>1 bath</li></ul>
+  <div class="acts"><button class="btn ghost" data-i="0">Photos</button><button class="btn book" data-i="0">Check dates</button></div></div>
+</article></div></div></section>
+<section class="why" id="why"><div class="wrap"><h2 class="rv">Why book direct</h2><p class="sub rv">Same places, same host — just without the middleman.</p>
+<div class="grid"><div class="rv"><b>Best direct rate</b><p>No booking-site service fee added on top of your stay.</p></div><div class="rv"><b>Talk to the host</b><p>Questions about dates, check-in or the area answered on WhatsApp.</p></div><div class="rv"><b>Live availability</b><p>Calendars stay in sync with Airbnb, so free dates are real.</p></div><div class="rv"><b>Come back easily</b><p>Save the site and book your next stay in one message.</p></div></div></div></section>
+<section class="faq" id="faq"><div class="wrap"><h2 class="rv">Questions</h2>
+<details><summary>How do I book?</summary><p>Pick a stay, choose your dates and send the request on WhatsApp. The host confirms availability and the rate.</p></details>
+<details><summary>Are these the same places as on Airbnb?</summary><p>Yes — the same homes from the same host, booked directly.</p></details>
+<details><summary>Are the dates up to date?</summary><p>On the live site each calendar is synced with Airbnb, so booked nights are blocked automatically.</p></details>
+<details><summary>Can I book more than one apartment for a group?</summary><p>Yes — mention it in your message and the host will check dates for all of them.</p></details>
+</div></section>
+<section style="padding-top:10px"><div class="cta rv"><h2>Planning a stay in Bo Phut?</h2><p>Tell the host your dates and number of guests — you'll get an answer on WhatsApp.</p><a class="btn" href="#stays">Choose a stay</a></div></section>
+<footer>Sunset House Bophut · Bo Phut, Thailand · website preview by GB Management</footer>
+<div class="modal" id="m"><div class="box"><button class="x" id="mx" aria-label="Close">×</button><img class="big" id="mbig" alt=""><div class="thumbs" id="mth"></div>
+<div class="mb"><div><div class="meta" id="mmeta"></div><h3 id="mt"></h3><ul class="specs" id="msp" style="margin-top:10px"></ul><p class="note">Photos from the owner's listing.</p></div>
+<div class="form"><b>Request dates</b><label>Check-in</label><input type="date" id="ci"><label>Check-out</label><input type="date" id="co"><label>Guests</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+<button class="btn" id="send">Send request on WhatsApp</button><p class="note">On the live site this opens a WhatsApp chat with the host, with the stay and dates filled in.</p></div></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const L=[{"t":"the sunset house .(bigbudda )","type":"Tiny home","r":"4.67","s":["1 bedroom","2 beds","1 bath"],"p":["img/1399065114622951948/00.jpg","img/1399065114622951948/01.jpg","img/1399065114622951948/02.jpg","img/1399065114622951948/03.jpg","img/1399065114622951948/04.jpg","img/1399065114622951948/05.jpg","img/1399065114622951948/06.jpg"]}];
+const fr=[...document.querySelectorAll(".hero .fr")],tags=["White A-frame cottage with thatched awning, patio chairs, AC units"];let k=0;
+if(fr.length>1&&!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{fr[k].classList.remove("on");k=(k+1)%fr.length;fr[k].classList.add("on");document.getElementById("tag").textContent=tags[k]},5500);
+const hd=document.getElementById("hd"),dm=document.querySelector(".demo");const hdr=()=>{const s=scrollY>60;hd.classList.toggle("solid",s);hd.style.top=s?"0px":Math.max(0,dm.offsetHeight-scrollY)+"px"};addEventListener("scroll",hdr,{passive:true});addEventListener("resize",hdr);hdr();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".rv").forEach(x=>io.observe(x));
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("on",x===b));const f=b.dataset.f;document.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide",!(f==="all"||c.dataset.c===f||(f==="b2"&&+c.dataset.b>=2))))});
+const m=document.getElementById("m"),big=document.getElementById("mbig"),th=document.getElementById("mth");let cur=null;
+function open(i,book){cur=L[i];big.src=cur.p[0];th.innerHTML=cur.p.map((p,j)=>'<img src="'+p+'"'+(j?'':' class="on"')+' alt="">').join("");
+th.querySelectorAll("img").forEach(t=>t.onclick=()=>{big.src=t.src;th.querySelectorAll("img").forEach(x=>x.classList.toggle("on",x===t))});
+document.getElementById("mt").textContent=cur.t;document.getElementById("mmeta").innerHTML="<span>"+cur.type+"</span>"+(+cur.r?'<span class="star">★ '+cur.r+"</span>":'<span class="new">New</span>');
+document.getElementById("msp").innerHTML=cur.s.map(s=>"<li>"+s+"</li>").join("");m.classList.add("open");document.body.style.overflow="hidden";if(book)setTimeout(()=>document.getElementById("ci").focus(),200)}
+document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>open(+b.dataset.i,b.classList.contains("book")));
+const close=()=>{m.classList.remove("open");document.body.style.overflow=""};document.getElementById("mx").onclick=close;m.onclick=e=>{if(e.target===m)close()};addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+const t=new Date(),iso=d=>d.toISOString().slice(0,10);ci.min=iso(t);co.min=iso(new Date(+t+864e5));
+document.getElementById("send").onclick=()=>{const msg="Hi! I'd like to book: "+cur.t+(ci.value?"\nCheck-in: "+ci.value:"")+(co.value?"\nCheck-out: "+co.value:"")+"\nGuests: "+gu.value;
+const el=document.getElementById("toast");el.textContent="Preview: on your live site this sends to your WhatsApp → “"+msg.replace(/\n/g," · ")+"”";el.classList.add("on");setTimeout(()=>el.classList.remove("on"),6000)};
+</script></body></html>

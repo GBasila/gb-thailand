@@ -1,0 +1,27 @@
+{
+ "img/1399065114622951948/02.jpg": {
+  "desc": "White A-frame cottage with thatched awning, patio chairs, AC units",
+  "kind": "exterior",
+  "wow": 3
+ },
+ "img/1399065114622951948/03.jpg": {
+  "desc": "Wall-mounted TV above floating wooden shelf with clock, vase, books",
+  "kind": "interior",
+  "wow": 3
+ },
+ "img/1399065114622951948/00.jpg": {
+  "desc": "Living room with sofa, ottoman, jute rug, sliding doors to patio",
+  "kind": "interior",
+  "wow": 4
+ },
+ "img/1399065114622951948/04.jpg": {
+  "desc": "Small entrance porch with potted plants, sliding glass door, chair",
+  "kind": "exterior",
+  "wow": 3
+ },
+ "img/1399065114622951948/01.jpg": {
+  "desc": "A-frame attic bedroom with LED-lit beams, wooden bed, jute rug",
+  "kind": "bedroom",
+  "wow": 6
+ }
+}
