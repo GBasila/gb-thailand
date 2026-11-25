@@ -1,0 +1,27 @@
+{
+ "img/home/02.jpg": {
+  "desc": "White Renault Zoe parked in lot, apartment buildings behind",
+  "kind": "other",
+  "wow": 2
+ },
+ "img/home/04.jpg": {
+  "desc": "White Renault Zoe parked on street before apartment buildings",
+  "kind": "other",
+  "wow": 2
+ },
+ "img/home/00.jpg": {
+  "desc": "Phone screenshot of booking page for Balluta Bay Sea Views listing",
+  "kind": "other",
+  "wow": 1
+ },
+ "img/home/03.jpg": {
+  "desc": "Renault car interior, steering wheel and dashboard, Audi ahead",
+  "kind": "other",
+  "wow": 1
+ },
+ "img/home/01.jpg": {
+  "desc": "Phone screenshot of Facebook error page, no property visible",
+  "kind": "other",
+  "wow": 1
+ }
+}
