@@ -183,12 +183,17 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px;text-align:center}
 <details><summary>Can I book more than one apartment for a group?</summary><p>Yes — mention it in your message and the host will check dates for all of them.</p></details>
 </div></section>
 <section style="padding-top:10px"><div class="cta rv"><h2>Planning a stay in Sliema?</h2><p>Tell the host your dates and number of guests — you'll get an answer on WhatsApp.</p><a class="btn" href="#stays">Choose a stay</a></div></section>
-<section style="max-width:1100px;margin:28px auto 8px;padding:0 16px"><div style="border:1px solid rgba(127,127,127,.25);border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start"><div style="font-size:28px;line-height:1">🚗</div><div><b>Extra: a private electric car for your stay</b><br><span style="opacity:.8">Renault Zoe, ready at your apartment. Optional full insurance €20/day · €100 deposit · please return it fully charged. Ask us on WhatsApp when you book.</span></div></div></section>
 <footer>GB Properties Malta · Sliema, Malta · website by GB Management</footer>
 <div class="modal" id="m"><div class="box"><button class="x" id="mx" aria-label="Close">×</button><img class="big" id="mbig" alt=""><div class="thumbs" id="mth"></div>
 <div class="mb"><div><div class="meta" id="mmeta"></div><h3 id="mt"></h3><ul class="specs" id="msp" style="margin-top:10px"></ul><p class="note">Photos from the owner's listing.</p></div>
 <div class="form"><b>Request dates</b><label>Check-in</label><input type="date" id="ci"><label>Check-out</label><input type="date" id="co"><label>Guests</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-<p id="av" class="av"></p><button class="btn" id="send">Send request on WhatsApp</button><p class="note">Opens WhatsApp with your stay and dates filled in — you get an answer right away and the host confirms.</p></div></div></div></div>
+<p id="av" class="av"></p><div id="car" style="margin:12px 0 4px;padding:12px;border:1px solid rgba(127,127,127,.3);border-radius:12px"><b>🚗 Add a private electric car</b> <span style="opacity:.7;font-size:13px">Renault Zoe · automatic · ~300 km per charge</span>
+<label>Car option</label><select id="cpk"><option value="">No car</option><option value="day">Daily — €70/day</option><option value="week">Weekly package</option><option value="month">Monthly package</option></select>
+<div id="cdw" style="display:none"><label>Days</label><select id="cdays"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<label style="display:flex;gap:8px;align-items:center;margin-top:8px"><input type="checkbox" id="cins" style="width:auto"> Full insurance +€20/day</label>
+<p id="ctot" style="margin:8px 0 0;font-weight:600"></p>
+<p style="font-size:12.5px;opacity:.75;margin:6px 0 0">Drivers 25+. Pick up the car at the apartment's parking after check-in and leave it fully charged. €100 refundable deposit, paid together with the car (returned once keys and parking remotes are back in place, with photos). From the airport: Bolt or Uber stops right opposite the entrance, about €20 to the apartment.</p></div>
+<button class="btn" id="send">Send request on WhatsApp</button><p class="note">Opens WhatsApp with your stay and dates filled in — you get an answer right away and the host confirms.</p></div></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
 const WA="66632287050";
@@ -215,7 +220,14 @@ function chk(){if(!av)return;av.className="av";av.textContent="";if(!AV||!cur||!
  const n=Math.round((new Date(co.value)-new Date(ci.value))/864e5),est=cur.pn?" · ≈ "+cur.ps+(cur.pn*n)+" for "+n+" night"+(n>1?"s":"")+" (the host confirms the final price)":"";
  if(hit){av.classList.add("busy");av.textContent="❌ Booked "+hit.start+" → "+hit.end+" — try other dates"}else{av.classList.add("free");av.textContent="✅ Available for your dates"+est}}
 ci.onchange=co.onchange=chk;
-document.getElementById("send").onclick=()=>{const msg="Hi! I'd like to book: "+cur.t+(ci.value?"\nCheck-in: "+ci.value:"")+(co.value?"\nCheck-out: "+co.value:"")+"\nGuests: "+gu.value+"\n\n#site-malta-sliema";
+const CAR={day:70,week:[150,200],month:[400,500]},CD={day:1,week:7,month:30};
+function carCalc(){const pk=cpk.value;document.getElementById("cdw").style.display=pk==="day"?"block":"none";const out=document.getElementById("ctot");if(!pk){out.textContent="";return null}
+ const hi=ci.value?(m=>m>=4&&m<=10)(+ci.value.slice(5,7)):false,days=pk==="day"?+cdays.value:CD[pk],base=pk==="day"?CAR.day*days:CAR[pk][hi?1:0],ins=cins.checked?20*days:0,tot=base+ins;
+ const name=pk==="day"?days+" day"+(days>1?"s":""):pk==="week"?"Weekly package":"Monthly package";
+ out.textContent="Car total: €"+tot+(ins?" (incl. full insurance €"+ins+")":"")+" · + €100 refundable deposit"+(pk!=="day"&&!ci.value?" · pick dates for the season price":"");
+ return name+(cins.checked?" + full insurance":"")+" = €"+tot+" (+ €100 refundable deposit)"}
+[cpk,cdays,cins].forEach(x=>x.onchange=carCalc);ci.addEventListener("change",carCalc);
+document.getElementById("send").onclick=()=>{const car=carCalc();const msg="Hi! I'd like to book: "+cur.t+(ci.value?"\nCheck-in: "+ci.value:"")+(co.value?"\nCheck-out: "+co.value:"")+"\nGuests: "+gu.value+(car?"\nCar: "+car:"")+"\n\n#site-malta-sliema";
 if(WA){const a=document.createElement("a");a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove();return} // (page has its own open(), so no window.open)
 const el=document.getElementById("toast");el.textContent="Preview: on your live site this sends to your WhatsApp → “"+msg.replace(/\n/g," · ")+"”";el.classList.add("on");setTimeout(()=>el.classList.remove("on"),6000)};
 </script></body></html>
