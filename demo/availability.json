@@ -2,10 +2,6 @@
  "site": "Your Villa (demo site)",
  "busy": [
   {
-   "start": "2026-11-27",
-   "end": "2026-11-28"
-  },
-  {
    "start": "2026-12-05",
    "end": "2026-12-09"
   },
@@ -21,5 +17,5 @@
  "sources": [
   "Airbnb (demo sample)"
  ],
- "updated": "2026-11-27T00:43:06.798Z"
+ "updated": "2026-11-28T00:00:19.847Z"
 }
